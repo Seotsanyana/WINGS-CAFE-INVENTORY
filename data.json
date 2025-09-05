@@ -1,0 +1,20 @@
+[
+    {
+        "id": "1",
+        "name": "Cappuccino",
+        "description": "Classic Italian coffee drink",
+        "category": "Beverages",
+        "price": 3.5,
+        "quantity": 25,
+        "lowStockThreshold": 10
+    },
+    {
+        "id": "2",
+        "name": "Chocolate Cake",
+        "description": "Rich chocolate cake slice",
+        "category": "Desserts",
+        "price": 4.75,
+        "quantity": 8,
+        "lowStockThreshold": 10
+    }
+]

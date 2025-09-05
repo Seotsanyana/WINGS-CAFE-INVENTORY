@@ -1,0 +1,265 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    color: #333;
+}
+
+header {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: white;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+nav {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover,
+.nav-btn.active {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.page {
+    display: none;
+    animation: fadeIn 0.5s;
+}
+
+.page.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: #6a11cb;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2575fc;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-bottom: 1.5rem;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: white;
+    font-weight: bold;
+}
+
+tr:hover {
+    background-color: #f9f9f9;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.edit-btn {
+    color: #2575fc;
+}
+
+.delete-btn {
+    color: #ff4757;
+}
+
+.action-btn:hover {
+    transform: scale(1.2);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    animation: slideIn 0.3s;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #aaa;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.low-stock {
+    color: #ff4757;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    .dashboard-cards {
+        grid-template-columns: 1fr;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    th,
+    td {
+        padding: 0.5rem;
+    }
+}
